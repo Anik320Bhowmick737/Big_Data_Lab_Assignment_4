@@ -1,0 +1,13 @@
+Data_downloader:
+  year: 2023
+  start_idx: 13240
+  end_idx: 13250
+
+Prepare:
+  path: "/Users/anikbhowmick/Python/Big_Data_Assignment/A03/Downloaded_Data"
+
+process:
+  path: "/Users/anikbhowmick/Python/Big_Data_Assignment/A03/Downloaded_Data"
+
+Evaluate:
+  name_csv: "99999904237"

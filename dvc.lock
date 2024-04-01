@@ -1,0 +1,82 @@
+schema: '2.0'
+stages:
+  Data_downloader:
+    cmd: python Codes/Data_downloader.py
+    deps:
+    - path: Codes/Data_downloader.py
+      hash: md5
+      md5: 48cb47a0e6f0956e305f4484ba7630c9
+      size: 1274
+    params:
+      params.yaml:
+        Data_downloader.end_idx: 13250
+        Data_downloader.start_idx: 13240
+        Data_downloader.year: 2023
+    outs:
+    - path: Downloaded_Data
+      hash: md5
+      md5: f7ae0cb786262d287d2f7516f51861fc.dir
+      size: 299829547
+      nfiles: 10
+  Prepare:
+    cmd: python Codes/Prepare.py
+    deps:
+    - path: Codes/Data_downloader.py
+      hash: md5
+      md5: 48cb47a0e6f0956e305f4484ba7630c9
+      size: 1274
+    - path: Codes/Prepare.py
+      hash: md5
+      md5: eea87a731376af0e370d10fa4183b7d7
+      size: 1131
+    params:
+      params.yaml:
+        Prepare.path: /Users/anikbhowmick/Python/Big_Data_Assignment/A03/Downloaded_Data
+    outs:
+    - path: Ground_truth
+      hash: md5
+      md5: f5c98635fe45a23a594e0dbb90c1445a.dir
+      size: 3469
+      nfiles: 9
+  process:
+    cmd: python Codes/process.py
+    deps:
+    - path: Codes/Data_downloader.py
+      hash: md5
+      md5: 48cb47a0e6f0956e305f4484ba7630c9
+      size: 1274
+    - path: Codes/process.py
+      hash: md5
+      md5: 78d0d18e5cfe841a4bb7ac7e6d5bcd23
+      size: 922
+    params:
+      params.yaml:
+        process.path: /Users/anikbhowmick/Python/Big_Data_Assignment/A03/Downloaded_Data
+    outs:
+    - path: Input_path
+      hash: md5
+      md5: a788f69092183c540cf9b7d24300643a.dir
+      size: 8048
+      nfiles: 9
+  Evaluate:
+    cmd: python Codes/Evaluate.py
+    deps:
+    - path: Codes/Data_downloader.py
+      hash: md5
+      md5: 48cb47a0e6f0956e305f4484ba7630c9
+      size: 1274
+    - path: Codes/Evaluate.py
+      hash: md5
+      md5: 3fc35c08a0aa2a137b6a5037bbd1cb02
+      size: 1838
+    - path: Codes/Prepare.py
+      hash: md5
+      md5: eea87a731376af0e370d10fa4183b7d7
+      size: 1131
+    - path: Codes/process.py
+      hash: md5
+      md5: 78d0d18e5cfe841a4bb7ac7e6d5bcd23
+      size: 922
+    params:
+      params.yaml:
+        Evaluate.name_csv: '99999904237'

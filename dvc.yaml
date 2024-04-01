@@ -1,0 +1,38 @@
+stages:
+  Data_downloader:
+    cmd: python Codes/Data_downloader.py
+    deps:
+    - Codes/Data_downloader.py
+    params:
+    - Data_downloader.end_idx
+    - Data_downloader.start_idx
+    - Data_downloader.year
+    outs:
+    - Downloaded_Data
+  Prepare:
+    cmd: python Codes/Prepare.py
+    deps:
+    - Codes/Data_downloader.py
+    - Codes/Prepare.py
+    params:
+    - Prepare.path
+    outs:
+    - Ground_truth
+  process:
+    cmd: python Codes/process.py
+    deps:
+    - Codes/Data_downloader.py
+    - Codes/process.py
+    params:
+    - process.path
+    outs:
+    - Input_path
+  Evaluate:
+    cmd: python Codes/Evaluate.py
+    deps:
+    - Codes/Data_downloader.py
+    - Codes/Evaluate.py
+    - Codes/Prepare.py
+    - Codes/process.py
+    params:
+    - Evaluate.name_csv
