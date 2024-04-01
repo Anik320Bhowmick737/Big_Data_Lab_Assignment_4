@@ -1,0 +1,9 @@
+{
+    "99999904994": {
+        "DailyMinimumDryBulbTemperature": 0.9999798849192414,
+        "DailyDepartureFromNormalAverageTemperature": 0.9966055220121799,
+        "DailyAverageDryBulbTemperature": 0.9998651866942336,
+        "DailyMaximumDryBulbTemperature": 0.9999943685971445,
+        "Weighted R2 score": 0.9999943685971445
+    }
+}
