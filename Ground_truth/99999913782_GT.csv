@@ -1,0 +1,12 @@
+DATE,MonthlyMinimumTemperature,MonthlyDepartureFromNormalAverageTemperature,MonthlyMeanTemperature,MonthlyMaximumTemperature
+01,48.7,6.0,55.7,62.7
+02,53.2,8.1,60.7,68.1
+03,56.0,3.9,62.2,68.3
+04,61.8,2.1,67.5,73.2
+05,65.8,-2.0,70.9,76.1
+06,72.2,-2.1,77.2,82.1
+07,78.1,1.6,83.8,89.4
+08,78.3,2.2,83.5,88.6
+09,71.9,0.4,77.3,82.7
+10,62.9,0.4,69.0,75.1
+11,53.5,-0.5,60.0,66.5
